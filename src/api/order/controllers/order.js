@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 "use strict";
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
@@ -36,8 +38,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         payment_method_types: ["card"],
         customer_email: email,
         mode: "payment",
-        success_url: "http://localhost:3000/checkout/success",
-        cancel_url: "http://localhost:1338",
+        success_url: "https://afribodycareserver-ec9759a4ed30.herokuapp.com/checkout/success",
+        cancel_url: "https://afribodycareserver-ec9759a4ed30.herokuapp.com/",
         line_items: lineItems,
       });
 
